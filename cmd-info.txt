@@ -1,0 +1,597 @@
+                          GIT BASIC EXERCISES
+
+
+YOUR INITIAL COMMIT
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~$ mkdir git-basic-exercises
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~$ cd git-basic-exercises
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ ls a
+ls: cannot access 'a': No such file or directory
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git init
+Initialized empty Git repository in /home/recruit/git-basic-exercises/.git/
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ ls -a
+.  ..  .git
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ touch README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ ls -a
+.  ..  .git  README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+QUESTION 7
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+QUESTION 8
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add README.md
+
+QUESTION 9
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+
+
+
+QUESTION 10
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git reset HEAD README.md
+fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+QUESTION 11
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "initial commit"
+[master (root-commit) 028c8b7] initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+QUESTION 12
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit 028c8b74de50aa631afe7e410b0dd0dec9d23f1d (HEAD -> master)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 09:52:06 2020 +0200
+
+
+MORE COMMITS
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ nano README.md
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it.
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "second commit"
+[master 3852b78] second commit
+ 1 file changed, 1 insertion(+)
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ nano README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it , and puttin in the time
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ nano README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it , and puttin in the time eventualy we will.
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "third commit"
+[master f29e523] third commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+CHECK THIS OUT
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit f29e5236e4cc57c1ee0faac0675daaf0a04dacd2 (HEAD -> master)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:11:05 2020 +0200
+
+    third commit
+
+commit 3852b78f4a7bbc03f7d1be2253ceffdd348828c6
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:02:59 2020 +0200
+
+    second commit
+
+commit 028c8b74de50aa631afe7e410b0dd0dec9d23f1d
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 09:52:06 2020 +0200
+
+    initial commit
+
+
+QUESTION 1
+
+DONE THROYGH THE TERMINAL.
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout 3852b78f4a7bbc03f7d1be2253ceffdd348828c6
+Note: checking out '3852b78f4a7bbc03f7d1be2253ceffdd348828c6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 3852b78 second commit
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it.
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout master
+Previous HEAD position was 3852b78 second commit
+Switched to branch 'master'
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it , and puttin in the time eventualy we will.
+
+
+BRANCHING
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git branch
+* master
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git branch milkshake-flavours
+
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git branch
+* master
+  milkshake-flavours
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout master
+Already on 'master'
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git branch
+* master
+  milkshake-flavours
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ nano milkshakes.md
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	milkshakes.md
+
+nothing added to commit but untracked files present (use "git add" to track
+
+THERE'S A NEW BRANCH ADDED milkshake.md
+  
+QUESTION 7
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add milkshakes.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "added initial flavours"
+[master 484087d] added initial flavours
+ 1 file changed, 1 insertion(+)
+ create mode 100644 milkshakes.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ 
+
+QUESTION 8
+
+commit 484087de9c240f9a752d0670a7ae6bbdad67cf1c (HEAD -> master)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:53:13 2020 +0200
+
+    added initial flavours
+
+commit f29e5236e4cc57c1ee0faac0675daaf0a04dacd2 (milkshake-flavours)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:11:05 2020 +0200
+
+    third commit
+
+commit 3852b78f4a7bbc03f7d1be2253ceffdd348828c6
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:02:59 2020 +0200
+
+    second commit
+
+commit 028c8b74de50aa631afe7e410b0dd0dec9d23f1d
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 09:52:06 2020 +0200
+
+    initial commit
+
+QUESTION 9
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout master
+Already on 'master'
+
+QUESTION 10
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit 484087de9c240f9a752d0670a7ae6bbdad67cf1c (HEAD -> history, master)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:53:13 2020 +0200
+
+    added initial flavours
+
+commit f29e5236e4cc57c1ee0faac0675daaf0a04dacd2 (milkshake-flavours)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:11:05 2020 +0200
+
+    third commit
+
+commit 3852b78f4a7bbc03f7d1be2253ceffdd348828c6
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:02:59 2020 +0200
+
+    second commit
+
+commit 028c8b74de50aa631afe7e410b0dd0dec9d23f1d
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 09:52:06 2020 +0200
+
+    initial commit
+
+
+QUESTION 11
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ history > history.txt
+
+QUESTION 12
+
+commit 916730160a9e3d06cbfce8b1d4f0e6fd3633d4e4 (HEAD -> history)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 11:14:01 2020 +0200
+
+    added history
+
+
+QUESTION 13
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout milkshake-flavours
+Switched to branch 'milkshake-flavours'
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit f29e5236e4cc57c1ee0faac0675daaf0a04dacd2 (HEAD -> milkshake-flavours)
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 10:11:05 2020 +0200
+
+QUESTION 14
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ nano README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "random readme changes"
+[milkshake-flavours 2b2eb8b] random readme changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+QUESTION 15
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout history
+Switched to branch 'history'
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cat README.md
+Through hard work we will make it , and puttin in the time eventualy we will.
+
+QUESTION 16
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ rm README.md echo "booya" > README.md 
+rm: cannot remove 'echo': No such file or directory
+rm: cannot remove 'booya': No such file or directory
+
+QUESTION 17
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git add history.txt
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git commit -m "rewrote readme"
+On branch history
+Changes not staged for commit:
+	deleted:    README.md
+
+no changes added to commit
+
+QUESTION 18
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout history
+D	README.md
+Already on 'history'
+
+
+
+MERGING
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout master
+D	README.md
+Switched to branch 'master'
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git merge milkshake-flavours
+Merge made by the 'recursive' strategy.
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ ls
+milkshakes.md  README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit 36f918ede2191b8eb5c33ec27917b4913e223db4 (HEAD -> master)
+Merge: 484087d 2b2eb8b
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 11:48:29 2020 +0200
+
+    Merge branch 'milkshake-flavours'
+
+
+
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git merge history
+Use "fg" to return to nano.or to close the file... 
+
+[1]+  Stopped                 git merge histor
+
+
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ ls
+milkshakes.md  README.md
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit 36f918ede2191b8eb5c33ec27917b4913e223db4 (HEAD -> master)
+Merge: 484087d 2b2eb8b
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 11:48:29 2020 +0200
+
+    Merge branch 'milkshake-flavours'
+
+QUESTION 5
+
+DONE THROUGH THE TERMINAL
+
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout history
+Switched to branch 'history'
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git merge master
+Merge made by the 'recursive' strategy.
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git log
+commit c13aba0f85ef281953140fc4168eff483a7d17cb (HEAD -> history)
+Merge: 9167301 36f918e
+Author: mongimpupumiso <mongimpupumiso97@gmail.com>
+Date:   Mon Jan 20 12:04:27 2020 +0200
+
+    Merge branch 'master' into histor
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git checkout master
+Switched to branch 'master'
+
+GITHUB
+
+QUESTION 1
+
+DONE THROUGH THE BROWSER
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git remote add origin https://github.com/mongimpupumiso/git-basic-exercises.git
+
+QUESTION 3
+
+DONE THROUGH THE BROWSER
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ git push -u origin master
+
+
+PULLING AND REMOTES
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/git-basic-exercises$ cd ../
+
+QUESTION 2
+
+DONE THROUGH THE LINK
+
+QUESTION 3
+
+DONE THROUGH THE LINK
+
+QUESTION 4
+
+
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~$ git clone https://github.com/Umuzi-org/tech-department.git
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~$ cd tech-department
+
+QUESTION 7
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git brach
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git log
+
+QUESTION 8
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git branch -a
+* master
+
+QUESTION 9
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git checkout project/git-basic-exercises
+
+QUESTION 10
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git remote -v
+origin	https://github.com/Umuzi-org/tech-department.git (fetch)
+origin	https://github.com/Umuzi-org/tech-department.git (push)
+
+
+MULTIPLE REPOS
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git log
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ cd git-basic-exercises
+bash: cd: git-basic-exercises: No such file or directory
+recruit@admin1-ThinkCentre-M72e:~/tech-department$ git log
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~$ cd
+recruit@admin1-ThinkCentre-M72e:~$ mkdir this-will-be-another-repo
+
+
+QUESTION 4
+
+recruit@admin1-ThinkCentre-M72e:~$ cd this-will-be-another-repo
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git init
+Initialized empty Git repository in /home/recruit/this-will-be-another-repo/.git/
+
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ touch README.md
+
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ cd git-basic-exercises
+bash: cd: git-basic-exercises: No such file or directory
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+
+GITIGNORE
+
+
+QUESTION 1
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ touch ignore-me.db
+
+QUESTION 2
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git status
+
+QUESTION 3
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ nano .gitignore
+
+QUESTION 4
+
+DONE THROUGH THE TERMINAL
+
+QUESTION 5
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git status
+
+QUESTION 6
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ mkdir large-directory-that-should-be-local-only
+
+QUESTION 7
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ cd large-directory-that-should-be-local-only
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo/large-directory-that-should-be-local-only$ echo "this file belongs to me" > readme.md
+
+QUESTION 8
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo/large-directory-that-should-be-local-only$ cd ..
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git status
+
+QUESTION 9
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ nano .gitignore
+
+QUESTION 10
+
+recruit@admin1-ThinkCentre-M72e:~/this-will-be-another-repo$ git status
